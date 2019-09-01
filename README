@@ -1,0 +1,36 @@
+workflow implementation through enums?
+
+Goals
+1. implement theoretical workflow (using enums) without using a workflow system such as activiti
+2. implement versioning and tie a workflow execution to a specific version
+3. support multiple workflow versions running side-by-side
+   1. default
+   2. remaining versions to support existing workflow executions that have not completed / for reference to show the steps they have taken in the past?
+
+Actions
+1. prepare interfaces for workflow steps
+2. implement workflow steps with enums for a sample / theoretical workflow
+3. implement business logic to support any workflow / validation / etc.
+4. implement sample workflow such as approval, access approval, provisioning, etc.
+
+
+
+0. authenticate
+1. raise request / UI is available to selected user / create request entity is created
+2. user approves request or components of the request
+3. request is fulfilled
+
+Request:
+ Principal
+ Resource / Action pair
+    1. grant the user group / default role
+    2. grant the user access to the specified system
+
+Approval:
+ approve single Resource / Action pairs
+  1. approve item #1, bypass (ignore) #2
+
+Provisioning:
+ provision resource / action pairs (as they're approved)
+
+@refence Java EE batch, very similar concepts
